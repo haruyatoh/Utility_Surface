@@ -27,8 +27,9 @@ void ofApp::draw(){
     ofLine(-200,-200,0,200,-200,400);
     
     ofNoFill();
+    ofSetLineWidth(3);
     ofSetColor(ofColor::aqua);
-    for(int i=0; i<40; i++){
+    for(int i=0; i<41; i++){
     ofBeginShape();
         int x1 = 150-4*i;
         int x2 = -200+4*i;
@@ -41,6 +42,41 @@ void ofApp::draw(){
         ofBezier(x1, y, z1, x2, y, z2, x2, y, z3, x1, y, z4 );
     ofEndShape();
     }
+    
+    ofSetLineWidth(1);
+    ofSetColor(ofColor::aqua,50);
+    for(float j=0; j<200; j++){
+    ofBeginShape();
+    float xx1 = 150-0.8*j;
+    float xx2 = -200+0.8*j;
+    int yy = -190+2*j;
+    int zz1 = 350-1*j;
+    int zz2 = -100+1*j;
+    float zz3 = zz2*-1;
+    float zz4 = zz1*-1;
+    
+    ofBezier(xx1, yy, zz1, xx2, yy, zz2, xx2, yy, zz3, xx1, yy, zz4 );
+    ofEndShape();
+}
+
+
+//    ofFill();
+//    ofSetColor(255,10);
+//    for(int i=0; i<40; i++){
+//        ofBeginShape();
+//        int x1 = 150-4*i;
+//        int x2 = -200+4*i;
+//        int y = -190+10*i;
+//        int z1 = 350-5*i;
+//        int z2 = -100+5*i;
+//        int z3 = z2*-1;
+//        int z4 = z1*-1;
+//        
+//        ofVertex(x1, y, z1);
+//        ofBezierVertex(x2, y, z2, x2, y, z3, x1, y, z4 );
+//        ofEndShape();
+//    }
+
     
     ofDisableDepthTest();
     if (bUseEasyCam) {
